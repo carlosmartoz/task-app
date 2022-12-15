@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: "Roboto", sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2b2d42;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Lato", sans-serif;
+}
+textarea:focus,
+input:focus {
+	outline: none;
+}
+.task {
+	gap: 2.4rem;
+	width: 100%;
+	display: flex;
+	padding: 2.4rem;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+@media screen and (min-width: 768px) {
+	.task {
+		width: 50.2rem;
+	}
+}

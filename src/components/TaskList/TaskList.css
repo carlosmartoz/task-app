@@ -1,0 +1,12 @@
+.task--list {
+	gap: 1.6rem;
+	display: flex;
+	flex-direction: column;
+}
+.task--list h3 {
+	color: #edf2f4;
+	font-weight: bold;
+	font-size: 2.4rem;
+	text-align: center;
+	line-height: 3.2rem;
+}

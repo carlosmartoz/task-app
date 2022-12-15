@@ -1,0 +1,16 @@
+.task--list-loader {
+	width: 100%;
+	height: 4rem;
+	opacity: 0.6;
+	background-color: #ef233c;
+	animation: color 0.8s infinite;
+	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
+}
+@keyframes color {
+	50% {
+		background-color: #d90429;
+	}
+	100% {
+		background-color: #ef233c;
+	}
+}
