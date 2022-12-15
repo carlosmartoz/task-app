@@ -6,10 +6,10 @@
 
 ## 💼 Used technologies
 
-![](https://img.shields.io/badge/Markup-HTML-informational?style=for-the-badge&logo=html5&logoColor=2892D7&color=2b2d42&labelColor=ef233c)
-![](https://img.shields.io/badge/Style-CSS-informational?style=for-the-badge&logo=css3&logoColor=2892D7&color=2b2d42&labelColor=ef233c)
-![](https://img.shields.io/badge/Code-JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=2892D7&color=2b2d42&labelColor=ef233c)
-![](https://img.shields.io/badge/Code-React.js-informational?style=for-the-badge&logo=react&logoColor=2892D7&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Markup-HTML-informational?style=for-the-badge&logo=html5&logoColor=ef233c&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Style-CSS-informational?style=for-the-badge&logo=css3&logoColor=ef233c&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Code-JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=ef233c&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Code-React.js-informational?style=for-the-badge&logo=react&logoColor=ef233c&color=2b2d42&labelColor=ef233c)
 
 ## 🚨 Fork this repo
 
