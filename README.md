@@ -11,7 +11,7 @@
 ![](https://img.shields.io/badge/Code-JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=edf2f4&color=ef233c&labelColor=2b2d42)
 ![](https://img.shields.io/badge/Code-React.js-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=ef233c&labelColor=2b2d42)
 
-## 🚨 Forking this repo
+## 🚨 Fork this repo
 
 You can fork this repo and please give me proper credit, enjoy 😊
 
