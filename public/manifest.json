@@ -1,0 +1,25 @@
+{
+	"short_name": "Task App",
+	"name": "Task App",
+	"icons": [
+		{
+			"src": "./Logo.svg",
+			"sizes": "64x64 32x32 24x24 16x16",
+			"type": "image/svg"
+		},
+		{
+			"src": "Logo.svg",
+			"type": "image/svg",
+			"sizes": "192x192"
+		},
+		{
+			"src": "Logo.svg",
+			"type": "image/svg",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#ef233c",
+	"background_color": "#2b2d42"
+}
