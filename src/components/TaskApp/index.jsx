@@ -49,17 +49,17 @@ function TaskApp() {
 						onSearchValueChange={onSearchValueChange}
 					/>
 
-					<TaskList>
-						{/* We display a message in case an error occurs */}
-						{error && <h3>There was an error 😥</h3>}
-
-						{/* We show a loading message, when the application is loading the data */}
-						{loading && <TaskLoader count={3} />}
-
-						{/* If you have finished loading and there are no tasks, a message is displayed to create the first task */}
-						{!loading && !searchedTasks.length && !error && <h3>Create your first task 🔥</h3>}
-
-						{searchedTasks.map((task) => (
+					<TaskList
+						error={error}
+						loading={loading}
+						totalTasks={totalTasks}
+						searchedTasks={searchedTasks}
+						searchText={searchValue}
+						onError={() => <h3>There was an error 😥</h3>}
+						onLoading={() => <TaskLoader count={3} />}
+						onEmptyTask={() => <h3>Create your first task 🔥</h3>}
+						onEmptySearchResult={(searchText) => <h3>No se encuentra {searchText} 😥</h3>}
+						render={(task) => (
 							<TaskItem
 								key={task.id}
 								title={task.title}
@@ -67,8 +67,8 @@ function TaskApp() {
 								onComplete={() => completeTask(task.title)}
 								onDelete={() => deleteTask(task.title)}
 							/>
-						))}
-					</TaskList>
+						)}
+					/>
 
 					<TaskButton setOpenModal={setOpenModal} onClickButton={onClickButton} />
 				</>
