@@ -1,11 +1,6 @@
 import "./TaskButton.css";
 
-function TaskButton({ setOpenModal }) {
-	// Method to open and close the modal
-	const onClickButton = () => {
-		setOpenModal(true);
-	};
-
+function TaskButton({ onClickButton }) {
 	// Component UI
 	return (
 		<>

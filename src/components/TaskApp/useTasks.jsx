@@ -1,10 +1,7 @@
-import { useState, createContext } from "react";
+import { useState } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-// Create Context
-const TaskContext = createContext();
-
-function TaskProvider(props) {
+function useTasks() {
 	// Consume variables and methods from the custom hook useLocalStorage
 	const { item: tasks, saveItem: saveTasks, loading, error } = useLocalStorage("TASKS_V1", []);
 
@@ -73,26 +70,20 @@ function TaskProvider(props) {
 	};
 
 	// Provider with the values to import to others components
-	return (
-		<TaskContext.Provider
-			value={{
-				loading,
-				error,
-				searchValue,
-				setSearchValue,
-				totalTasks,
-				completedTasks,
-				searchedTasks,
-				completeTask,
-				deleteTask,
-				openModal,
-				setOpenModal,
-				addTask,
-			}}
-		>
-			{props.children}
-		</TaskContext.Provider>
-	);
+	return {
+		loading,
+		error,
+		searchValue,
+		setSearchValue,
+		totalTasks,
+		completedTasks,
+		searchedTasks,
+		completeTask,
+		deleteTask,
+		openModal,
+		setOpenModal,
+		addTask,
+	};
 }
 
-export { TaskContext, TaskProvider };
+export { useTasks };

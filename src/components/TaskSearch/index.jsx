@@ -1,16 +1,6 @@
 import "./TaskSearch.css";
-import { useContext } from "react";
-import { TaskContext } from "../TaskContext/TaskContext";
 
-function TaskSearch() {
-	// Get props and methods from the TaskContext
-	const { searchValue, setSearchValue, totalTasks, completedTasks } = useContext(TaskContext);
-
-	// Save the value of what you type in the search engine in setSearchValue
-	const onSearchValueChange = (event) => {
-		setSearchValue(event.target.value);
-	};
-
+function TaskSearch({ searchValue, totalTasks, completedTasks, onSearchValueChange }) {
 	// Component UI
 	return (
 		<>

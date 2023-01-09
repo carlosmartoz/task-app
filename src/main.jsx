@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom/client";
-import { App } from "./components/App";
+import { TaskApp } from "./components/TaskApp";
 
-// Component App
+// Component Main
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<>
-		<App />
+		<TaskApp />
 	</>
 );

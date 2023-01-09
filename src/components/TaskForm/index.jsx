@@ -1,17 +1,13 @@
 import "./TaskForm.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { AiOutlineCloseSquare } from "react-icons/ai";
-import { TaskContext } from "../TaskContext/TaskContext";
 
-function TaskForm({ setOpenModal }) {
+function TaskForm({ setOpenModal, addTask }) {
 	// UseState Hook for the value of the input
 	const [newTaskValue, setNewTaskValue] = useState("");
 
 	// UseState Hook for validation of the form
 	const [validation, setValidation] = useState(false);
-
-	// Method from TaskContext to add a new task
-	const { addTask } = useContext(TaskContext);
 
 	// Listen for changes in the input to save it in the hook
 	const onChange = (event) => {
