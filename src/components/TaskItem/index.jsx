@@ -1,4 +1,3 @@
-import "./TaskItem.css";
 import { AiOutlineCheckSquare, AiFillCheckSquare, AiOutlineCloseSquare } from "react-icons/ai";
 
 function TaskItem({ title, completed, onComplete, onDelete }) {

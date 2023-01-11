@@ -1,5 +1,3 @@
-import "./TaskButton.css";
-
 function TaskButton({ onClickButton }) {
 	// Component UI
 	return (

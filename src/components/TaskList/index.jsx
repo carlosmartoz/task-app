@@ -1,5 +1,3 @@
-import "./TaskList.css";
-
 function TaskList({
 	children,
 	error,

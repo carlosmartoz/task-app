@@ -1,11 +1,9 @@
-import "./TaskSearch.css";
-
 function TaskSearch({ searchValue, totalTasks, completedTasks, onSearchValueChange, loading, storageChange }) {
 	// Component UI
 	return (
 		<>
 			<div className="task--search">
-				<div className={`task--search-counter ${!!loading || storageChange && "task--search-loading"}`}>
+				<div className={`task--search-counter ${!!loading || (storageChange && "task--search-loading")}`}>
 					<h1>
 						My <span>Tasks</span>
 					</h1>

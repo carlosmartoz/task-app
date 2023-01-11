@@ -1,0 +1,260 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: "Roboto", sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2b2d42;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Lato", sans-serif;
+}
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+.task {
+	gap: 2.4rem;
+	width: 100%;
+	display: flex;
+	padding: 2.4rem;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.task h3 {
+	color: #edf2f4;
+	font-weight: bold;
+	font-size: 2.4rem;
+	text-align: center;
+	line-height: 3.2rem;
+}
+
+.task--search,
+.task--form-container {
+	gap: 0.8rem;
+	display: flex;
+	flex-direction: column;
+}
+.task--search-counter {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+.task--search-loading,
+.task--search-input:disabled {
+	opacity: 25%;
+}
+.task--search-counter h1 {
+	color: #e6e8e6;
+	font-size: 2.4rem;
+	font-weight: bold;
+	line-height: 3.2rem;
+}
+.task--search-counter h3 {
+	font-size: 2rem;
+	color: #e6e8e6;
+	font-weight: bold;
+	line-height: 2.8rem;
+}
+.task--search-counter h1 span,
+.task--search-counter h3 span,
+.task--form-container h2 strong {
+	color: #2892d7;
+}
+.task--search-input,
+.task--form-container textarea {
+	padding: 1.2rem;
+	color: #edf2f4;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	border-radius: 0.4rem;
+	background-color: transparent;
+	border: 0.2rem solid #2892d7;
+	transition: border 0.4s ease-in-out;
+	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
+}
+.task--search-input:focus,
+.task--form-container textarea:focus {
+	border: 0.2rem solid #1d70a2;
+}
+.task--search-input::placeholder,
+.task--form-container textarea::placeholder {
+	color: #edf2f4;
+}
+
+.task--list-item {
+	display: flex;
+	padding: 1.2rem;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.4s;
+	border-radius: 0.4rem;
+	align-content: center;
+	background-color: #2892d7;
+	justify-content: space-between;
+	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
+}
+.task--list-item div {
+	top: 0;
+	width: 120%;
+	height: 100%;
+	position: absolute;
+	transition: all 0.4s;
+	background: #1d70a2;
+	transform: translate(-120%);
+	clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+}
+.task--button:hover div span,
+.task--form-button:hover div span,
+.task--list-item.task--list-completed div {
+	transform: translate(-10%);
+}
+.task--list-item p {
+	color: #edf2f4;
+	font-size: 1.6rem;
+	position: relative;
+	line-height: 2.4rem;
+}
+.task--list-item span {
+	display: flex;
+	cursor: pointer;
+	color: #edf2f4;
+	font-size: 2.4rem;
+	position: relative;
+	line-height: 3.2rem;
+	align-items: center;
+	transition: all 0.4s;
+}
+.task--list-item span:hover,
+.task--form-container span:hover {
+	transform: scale(1.2);
+}
+.task--list,
+.task--alert {
+	gap: 1.6rem;
+	display: flex;
+	flex-direction: column;
+}
+.task--list-loader {
+	width: 100%;
+	height: 4rem;
+	opacity: 0.6;
+	background-color: #2892d7;
+	animation: color 0.8s infinite;
+	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
+}
+
+.task--button,
+.task--form-button {
+	all: unset;
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	border-radius: 0.4rem;
+}
+.task--button div,
+.task--form-button div {
+	width: 100%;
+	height: 100%;
+	background: #2892d7;
+}
+.task--button div span,
+.task--form-button div span {
+	width: 120%;
+	height: 100%;
+	position: absolute;
+	transition: all 0.4s;
+	background: #1d70a2;
+	transform: translate(-100%);
+	clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+}
+.task--button div p,
+.task--form-button div p {
+	display: flex;
+	padding: 1.2rem;
+	color: #edf2f4;
+	font-weight: bold;
+	font-size: 1.6rem;
+	position: relative;
+	line-height: 2.4rem;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+.task--form {
+	gap: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.task--form-container div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.task--form-container h2 {
+	color: #e6e8e6;
+	font-weight: bold;
+	font-size: 2.4rem;
+	line-height: 3.2rem;
+}
+.task--form-container span {
+	display: flex;
+	cursor: pointer;
+	color: #2892d7;
+	font-weight: bold;
+	font-size: 2.4rem;
+	line-height: 3.2rem;
+	align-items: center;
+	transition: all 0.4s;
+}
+.task--form-container textarea {
+	resize: none;
+}
+.task--form h4 {
+	color: #1d70a2;
+	font-weight: bold;
+	font-size: 2.4rem;
+	text-align: center;
+	line-height: 3.2rem;
+}
+
+.task--alert p {
+	color: #edf2f4;
+	font-size: 1.6rem;
+	position: relative;
+	text-align: center;
+	line-height: 2.4rem;
+}
+
+@keyframes color {
+	50% {
+		background-color: #1d70a2;
+	}
+	100% {
+		background-color: #2892d7;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.task {
+		width: 50.2rem;
+	}
+}

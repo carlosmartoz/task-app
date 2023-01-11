@@ -1,4 +1,3 @@
-import "./TaskAlert.css";
 import { useStorageListener } from "./useStorageListener";
 
 // Component UI

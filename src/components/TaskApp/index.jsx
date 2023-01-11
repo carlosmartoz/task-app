@@ -1,12 +1,11 @@
-import "./TaskApp.css";
 import { useTasks } from "./useTasks";
 import { TaskList } from "../TaskList";
 import { TaskItem } from "../TaskItem";
 import { TaskForm } from "../TaskForm";
+import { TaskAlert } from "../TaskAlert";
 import { TaskButton } from "../TaskButton";
 import { TaskLoader } from "../TaskLoader";
 import { TaskSearch } from "../TaskSearch";
-import { TaskAlert } from "../TaskAlert";
 
 function TaskApp() {
 	// Get props and methods from the custom hook useTasks
