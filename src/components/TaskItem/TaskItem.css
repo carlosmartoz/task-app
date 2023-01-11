@@ -6,7 +6,7 @@
 	transition: all 0.4s;
 	border-radius: 0.4rem;
 	align-content: center;
-	background-color: #2892D7;
+	background-color: #2892d7;
 	justify-content: space-between;
 	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
 }
@@ -16,7 +16,7 @@
 	height: 100%;
 	position: absolute;
 	transition: all 0.4s;
-	background: #1D70A2;
+	background: #1d70a2;
 	transform: translate(-120%);
 	clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
 }

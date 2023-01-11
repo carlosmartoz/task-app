@@ -3,7 +3,15 @@ import { useLocalStorage } from "./useLocalStorage";
 
 function useTasks() {
 	// Consume variables and methods from the custom hook useLocalStorage
-	const { item: tasks, saveItem: saveTasks, loading, error } = useLocalStorage("TASKS_V1", []);
+	const {
+		item: tasks,
+		saveItem: saveTasks,
+		synchronizeItem: synchronizeTasks,
+		loading,
+		error,
+	} = useLocalStorage("TASKS_V1", []);
+
+	const [storageChange, setStorageChange] = useState(false);
 
 	// useState Hook for search the value in the input
 	const [searchValue, setSearchValue] = useState("");
@@ -83,6 +91,9 @@ function useTasks() {
 		openModal,
 		setOpenModal,
 		addTask,
+		synchronizeTasks,
+		storageChange,
+		setStorageChange,
 	};
 }
 

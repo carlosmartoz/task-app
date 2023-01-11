@@ -8,6 +8,9 @@
 	align-items: baseline;
 	justify-content: space-between;
 }
+.task--search-loading {
+	opacity: 25%;
+}
 .task--search-counter h1 {
 	color: #e6e8e6;
 	font-size: 2.4rem;
@@ -22,7 +25,7 @@
 }
 .task--search-counter h1 span,
 .task--search-counter h3 span {
-	color: #2892D7;
+	color: #2892d7;
 }
 .task--search-input {
 	padding: 1.2rem;
@@ -31,13 +34,16 @@
 	line-height: 2.4rem;
 	border-radius: 0.4rem;
 	background-color: transparent;
-	border: 0.2rem solid #2892D7;
+	border: 0.2rem solid #2892d7;
 	transition: border 0.4s ease-in-out;
 	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
 }
 .task--search-input:focus {
-	border: 0.2rem solid #1D70A2;
+	border: 0.2rem solid #1d70a2;
 }
 .task--search-input::placeholder {
 	color: #edf2f4;
+}
+.task--search-input:disabled {
+	opacity: 25%;
 }

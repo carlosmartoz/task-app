@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 
 function useLocalStorage(itemName, initialValue) {
+	// useState Hook for the synchronize item
+	const [synchronizedItem, setSynchronizedItem] = useState(true);
+
 	// useState Hook for the loading state
 	const [loading, setLoading] = useState(true);
 
@@ -35,12 +38,14 @@ function useLocalStorage(itemName, initialValue) {
 
 				// Set the loading state
 				setLoading(false);
+
+				setSynchronizedItem(true);
 			} catch (error) {
 				// Set the error state
 				setError(error);
 			}
 		}, 1000);
-	}, []);
+	}, [synchronizedItem]);
 
 	// Save the item in the local Storage, try and catch to managed the error state and create a new constance and json stringify to set new item
 	const saveItem = (newItem) => {
@@ -55,8 +60,13 @@ function useLocalStorage(itemName, initialValue) {
 		}
 	};
 
+	const synchronizeItem = () => {
+		setLoading(true);
+		setSynchronizedItem(false);
+	};
+
 	// Return the essentials variables and methods
-	return { item, saveItem, loading, error };
+	return { item, saveItem, loading, error, synchronizeItem };
 }
 
 export { useLocalStorage };

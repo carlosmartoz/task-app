@@ -6,6 +6,7 @@ import { TaskForm } from "../TaskForm";
 import { TaskButton } from "../TaskButton";
 import { TaskLoader } from "../TaskLoader";
 import { TaskSearch } from "../TaskSearch";
+import { TaskAlert } from "../TaskAlert";
 
 function TaskApp() {
 	// Get props and methods from the custom hook useTasks
@@ -22,6 +23,9 @@ function TaskApp() {
 		totalTasks,
 		completedTasks,
 		addTask,
+		synchronizeTasks,
+		storageChange,
+		setStorageChange,
 	} = useTasks();
 
 	// Save the value of what you type in the search engine in setSearchValue
@@ -46,31 +50,41 @@ function TaskApp() {
 						searchValue={searchValue}
 						totalTasks={totalTasks}
 						completedTasks={completedTasks}
+						loading={loading}
+						storageChange={storageChange}
 						onSearchValueChange={onSearchValueChange}
 					/>
 
-					<TaskList
-						error={error}
-						loading={loading}
-						totalTasks={totalTasks}
-						searchedTasks={searchedTasks}
-						searchText={searchValue}
-						onError={() => <h3>There was an error 😥</h3>}
-						onLoading={() => <TaskLoader count={3} />}
-						onEmptyTask={() => <h3>Create your first task 🔥</h3>}
-						onEmptySearchResult={(searchText) => <h3>No se encuentra {searchText} 😥</h3>}
-						render={(task) => (
-							<TaskItem
-								key={task.id}
-								title={task.title}
-								completed={task.completed}
-								onComplete={() => completeTask(task.title)}
-								onDelete={() => deleteTask(task.title)}
+					{/* Hide Task list and create button if storageChange is false */}
+					{!storageChange && (
+						<>
+							<TaskList
+								error={error}
+								loading={loading}
+								totalTasks={totalTasks}
+								searchedTasks={searchedTasks}
+								searchText={searchValue}
+								onError={() => <h3>There was an error 😥</h3>}
+								onLoading={() => <TaskLoader count={3} />}
+								onEmptyTask={() => <h3>Create your first task 🔥</h3>}
+								onEmptySearchResult={(searchText) => <h3>{searchText} Is not found 😥</h3>}
+								render={(task) => (
+									<TaskItem
+										key={task.id}
+										title={task.title}
+										completed={task.completed}
+										onComplete={() => completeTask(task.title)}
+										onDelete={() => deleteTask(task.title)}
+									/>
+								)}
 							/>
-						)}
-					/>
 
-					<TaskButton setOpenModal={setOpenModal} onClickButton={onClickButton} />
+							<TaskButton setOpenModal={setOpenModal} onClickButton={onClickButton} />
+						</>
+					)}
+
+					{/* Alert if there is a change from another tab open */}
+					<TaskAlert storageChange={storageChange} setStorageChange={setStorageChange} synchronize={synchronizeTasks} />
 				</>
 			)}
 		</>
