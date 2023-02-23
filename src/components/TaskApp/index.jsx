@@ -9,23 +9,12 @@ import { TaskSearch } from "../TaskSearch";
 
 function TaskApp() {
 	// Get props and methods from the custom hook useTasks
-	const {
-		error,
-		loading,
-		searchedTasks,
-		completeTask,
-		deleteTask,
-		openModal,
-		setOpenModal,
-		searchValue,
-		setSearchValue,
-		totalTasks,
-		completedTasks,
-		addTask,
-		synchronizeTasks,
-		storageChange,
-		setStorageChange,
-	} = useTasks();
+	const { states, statesUpdaters } = useTasks();
+
+	const { loading, error, searchValue, totalTasks, completedTasks, searchedTasks, openModal, storageChange } = states;
+
+	const { setSearchValue, completeTask, deleteTask, setOpenModal, addTask, synchronizeTasks, setStorageChange } =
+		statesUpdaters;
 
 	// Save the value of what you type in the search engine in setSearchValue
 	const onSearchValueChange = (event) => {

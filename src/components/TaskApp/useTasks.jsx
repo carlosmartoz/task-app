@@ -77,24 +77,20 @@ function useTasks() {
 		saveTasks(newTasks);
 	};
 
+	const states = { loading, error, searchValue, totalTasks, completedTasks, searchedTasks, openModal, storageChange };
+
 	// Provider with the values to import to others components
-	return {
-		loading,
-		error,
-		searchValue,
+	const statesUpdaters = {
 		setSearchValue,
-		totalTasks,
-		completedTasks,
-		searchedTasks,
 		completeTask,
 		deleteTask,
-		openModal,
 		setOpenModal,
 		addTask,
 		synchronizeTasks,
-		storageChange,
 		setStorageChange,
 	};
+
+	return { states, statesUpdaters };
 }
 
 export { useTasks };
