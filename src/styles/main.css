@@ -111,7 +111,7 @@ input:focus {
 	justify-content: space-between;
 	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
 }
-.task--list-item div {
+.task--list-item_hover {
 	top: 0;
 	width: 120%;
 	height: 100%;
@@ -123,7 +123,7 @@ input:focus {
 }
 .task--button:hover div span,
 .task--form-button:hover div span,
-.task--list-item.task--list-completed div {
+.task--list-item.task--list-completed .task--list-item_hover {
 	transform: translate(-10%);
 }
 .task--list-item p {
@@ -132,7 +132,8 @@ input:focus {
 	position: relative;
 	line-height: 2.4rem;
 }
-.task--list-item span {
+.task--list-item span,
+.task--list-item_icons span {
 	display: flex;
 	cursor: pointer;
 	color: #edf2f4;
@@ -143,8 +144,15 @@ input:focus {
 	transition: all 0.4s;
 }
 .task--list-item span:hover,
+.task--list-item_icons span:hover,
 .task--form-container span:hover {
 	transform: scale(1.2);
+}
+.task--list-item_icons {
+	gap: 1.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .task--list,
 .task--alert {

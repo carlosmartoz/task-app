@@ -9,7 +9,7 @@ function useTasks() {
 		synchronizeItem: synchronizeTasks,
 		loading,
 		error,
-	} = useLocalStorage("TASKS_V1", []);
+	} = useLocalStorage("TASKS_V2", []);
 
 	const [storageChange, setStorageChange] = useState(false);
 
@@ -41,23 +41,19 @@ function useTasks() {
 		});
 	}
 
-	function randomNumberInRange(min, max) {
-		// 👇️ get number between min (inclusive) and max (inclusive)
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
 	// Add task, create a new array and push the new value
 	const addTask = (title) => {
+		const id = newTaskId();
 		const newTasks = [...tasks];
 
-		newTasks.push({ id: randomNumberInRange(1, 999999), completed: false, title });
+		newTasks.push({ id, completed: false, title });
 
 		saveTasks(newTasks);
 	};
 
 	// Complete task, filter the task and create a new array with the complete task
-	const completeTask = (title) => {
-		const taskIndex = tasks.findIndex((task) => task.title === title);
+	const completeTask = (id) => {
+		const taskIndex = tasks.findIndex((task) => task.id === id);
 
 		const newTasks = [...tasks];
 
@@ -67,8 +63,8 @@ function useTasks() {
 	};
 
 	// Delete Task, filter the task and create a new array with the delete task
-	const deleteTask = (title) => {
-		const taskIndex = tasks.findIndex((task) => task.title === title);
+	const deleteTask = (id) => {
+		const taskIndex = tasks.findIndex((task) => task.id === id);
 
 		const newTasks = [...tasks];
 
@@ -91,6 +87,10 @@ function useTasks() {
 	};
 
 	return { states, statesUpdaters };
+}
+
+function newTaskId() {
+	return Date.now();
 }
 
 export { useTasks };
