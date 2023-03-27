@@ -24,12 +24,12 @@ h5,
 h6 {
 	font-family: "Lato", sans-serif;
 }
-textarea:focus,
-input:focus {
+input:focus,
+textarea:focus {
 	outline: none;
 }
 
-.task {
+.tasks--app {
 	gap: 2.4rem;
 	width: 100%;
 	display: flex;
@@ -38,7 +38,7 @@ input:focus {
 	flex-direction: column;
 	justify-content: flex-start;
 }
-.task h3 {
+.tasks--app h3 {
 	color: #edf2f4;
 	font-weight: bold;
 	font-size: 2.4rem;
@@ -46,8 +46,7 @@ input:focus {
 	line-height: 3.2rem;
 }
 
-.task--search,
-.task--form-container {
+.task--search {
 	gap: 0.8rem;
 	display: flex;
 	flex-direction: column;
@@ -56,10 +55,6 @@ input:focus {
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
-}
-.task--search-loading,
-.task--search-input:disabled {
-	opacity: 25%;
 }
 .task--search-counter h1 {
 	color: #e6e8e6;
@@ -74,12 +69,14 @@ input:focus {
 	line-height: 2.8rem;
 }
 .task--search-counter h1 span,
-.task--search-counter h3 span,
-.task--form-container h2 strong {
+.task--search-counter h3 span {
 	color: #2892d7;
 }
-.task--search-input,
-.task--form-container textarea {
+.task--search-loading,
+.task--search-input:disabled {
+	opacity: 25%;
+}
+.task--search-input {
 	padding: 1.2rem;
 	color: #edf2f4;
 	font-size: 1.6rem;
@@ -90,13 +87,26 @@ input:focus {
 	transition: border 0.4s ease-in-out;
 	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
 }
-.task--search-input:focus,
-.task--form-container textarea:focus {
+.task--search-input:focus {
 	border: 0.2rem solid #1d70a2;
 }
-.task--search-input::placeholder,
-.task--form-container textarea::placeholder {
+.task--search-input::placeholder {
 	color: #edf2f4;
+}
+
+.task--list {
+	gap: 1.6rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.task--list-loader {
+	width: 100%;
+	height: 4rem;
+	opacity: 0.6;
+	background-color: #2892d7;
+	animation: color 0.8s infinite;
+	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
 }
 
 .task--list-item {
@@ -111,6 +121,12 @@ input:focus {
 	justify-content: space-between;
 	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
 }
+.task--list-item p {
+	color: #edf2f4;
+	font-size: 1.6rem;
+	position: relative;
+	line-height: 2.4rem;
+}
 .task--list-item_hover {
 	top: 0;
 	width: 120%;
@@ -121,16 +137,11 @@ input:focus {
 	transform: translate(-120%);
 	clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
 }
-.task--button:hover div span,
-.task--form-button:hover div span,
-.task--list-item.task--list-completed .task--list-item_hover {
-	transform: translate(-10%);
-}
-.task--list-item p {
-	color: #edf2f4;
-	font-size: 1.6rem;
-	position: relative;
-	line-height: 2.4rem;
+.task--list-item_icons {
+	gap: 1.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .task--list-item span,
 .task--list-item_icons span {
@@ -144,66 +155,24 @@ input:focus {
 	transition: all 0.4s;
 }
 .task--list-item span:hover,
-.task--list-item_icons span:hover,
-.task--form-container span:hover {
+.task--list-item_icons span:hover {
 	transform: scale(1.2);
 }
-.task--list-item_icons {
-	gap: 1.6rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.task--list-item.task--list-completed .task--list-item_hover {
+	transform: translate(-10%);
 }
-.task--list,
+
 .task--alert {
 	gap: 1.6rem;
 	display: flex;
 	flex-direction: column;
 }
-.task--list-loader {
-	width: 100%;
-	height: 4rem;
-	opacity: 0.6;
-	background-color: #2892d7;
-	animation: color 0.8s infinite;
-	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
-}
-
-.task--button,
-.task--form-button {
-	all: unset;
-	cursor: pointer;
-	overflow: hidden;
-	position: relative;
-	border-radius: 0.4rem;
-}
-.task--button div,
-.task--form-button div {
-	width: 100%;
-	height: 100%;
-	background: #2892d7;
-}
-.task--button div span,
-.task--form-button div span {
-	width: 120%;
-	height: 100%;
-	position: absolute;
-	transition: all 0.4s;
-	background: #1d70a2;
-	transform: translate(-100%);
-	clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
-}
-.task--button div p,
-.task--form-button div p {
-	display: flex;
-	padding: 1.2rem;
+.task--alert p {
 	color: #edf2f4;
-	font-weight: bold;
 	font-size: 1.6rem;
 	position: relative;
+	text-align: center;
 	line-height: 2.4rem;
-	justify-content: center;
-	text-transform: uppercase;
 }
 
 .task--form {
@@ -211,6 +180,18 @@ input:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+}
+.task--form h4 {
+	color: #1d70a2;
+	font-weight: bold;
+	font-size: 2.4rem;
+	text-align: center;
+	line-height: 3.2rem;
+}
+.task--form-container {
+	gap: 0.8rem;
+	display: flex;
+	flex-direction: column;
 }
 .task--form-container div {
 	display: flex;
@@ -223,6 +204,9 @@ input:focus {
 	font-size: 2.4rem;
 	line-height: 3.2rem;
 }
+.task--form-container h2 strong {
+	color: #2892d7;
+}
 .task--form-container span {
 	display: flex;
 	cursor: pointer;
@@ -233,23 +217,74 @@ input:focus {
 	align-items: center;
 	transition: all 0.4s;
 }
+.task--form-container span:hover {
+	transform: scale(1.2);
+}
 .task--form-container textarea {
 	resize: none;
 }
-.task--form h4 {
-	color: #1d70a2;
-	font-weight: bold;
-	font-size: 2.4rem;
-	text-align: center;
-	line-height: 3.2rem;
-}
-
-.task--alert p {
+.task--form-container textarea {
+	padding: 1.2rem;
 	color: #edf2f4;
 	font-size: 1.6rem;
-	position: relative;
-	text-align: center;
 	line-height: 2.4rem;
+	border-radius: 0.4rem;
+	background-color: transparent;
+	border: 0.2rem solid #2892d7;
+	transition: border 0.4s ease-in-out;
+	box-shadow: 0 0.2rem 1.2rem 0.4rem rgb(0 0 0 / 14%);
+}
+.task--form-container textarea:focus {
+	border: 0.2rem solid #1d70a2;
+}
+.task--form-container textarea::placeholder {
+	color: #edf2f4;
+}
+
+.task--button-form,
+.task--button-create,
+.task--button-refresh {
+	all: unset;
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	border-radius: 0.4rem;
+}
+.task--button-form div,
+.task--button-create div,
+.task--button-refresh div {
+	width: 100%;
+	height: 100%;
+	background: #2892d7;
+}
+.task--button-form div span,
+.task--button-create div span,
+.task--button-refresh div span {
+	width: 120%;
+	height: 100%;
+	position: absolute;
+	transition: all 0.4s;
+	background: #1d70a2;
+	transform: translate(-100%);
+	clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+}
+.task--button-form div p,
+.task--button-create div p,
+.task--button-refresh div p {
+	display: flex;
+	padding: 1.2rem;
+	color: #edf2f4;
+	font-weight: bold;
+	font-size: 1.6rem;
+	position: relative;
+	line-height: 2.4rem;
+	justify-content: center;
+	text-transform: uppercase;
+}
+.task--button-form:hover div span,
+.task--button-create:hover div span,
+.task--button-refresh:hover div span {
+	transform: translate(-10%);
 }
 
 @keyframes color {
@@ -262,7 +297,7 @@ input:focus {
 }
 
 @media screen and (min-width: 768px) {
-	.task {
+	.tasks--app {
 		width: 50.2rem;
 	}
 }

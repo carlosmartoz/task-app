@@ -1,10 +1,8 @@
 function TaskLoader({ count }) {
-	// Method to render as many loaders as arrive by the props
 	const loaders = Array.from({ length: count }, (_, index) => {
-		return <li key={index} className="task--list-loader"></li>;
+		return <li key={index} className="task--loader"></li>;
 	});
 
-	// Component UI
 	return <>{loaders}</>;
 }
 

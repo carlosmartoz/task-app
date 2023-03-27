@@ -1,5 +1,4 @@
-function TaskSearch({ searchValue, totalTasks, completedTasks, onSearchValueChange, loading, storageChange }) {
-	// Component UI
+function TaskHeader({ loading, totalTasks, searchValue, storageChange, completedTasks, onSearchValueChange }) {
 	return (
 		<>
 			<div className="task--search">
@@ -11,18 +10,17 @@ function TaskSearch({ searchValue, totalTasks, completedTasks, onSearchValueChan
 					<h3>
 						Completed:{" "}
 						<span>
-							{/* Show the completed task and the total tasks */}
 							{completedTasks} / {totalTasks}
 						</span>
 					</h3>
 				</div>
 
 				<input
-					className="task--search-input"
 					type="text"
 					value={searchValue}
-					placeholder="Search for a task"
 					onChange={onSearchValueChange}
+					className="task--search-input"
+					placeholder="Search for a task"
 					disabled={loading || storageChange}
 				/>
 			</div>
@@ -30,4 +28,4 @@ function TaskSearch({ searchValue, totalTasks, completedTasks, onSearchValueChan
 	);
 }
 
-export { TaskSearch };
+export { TaskHeader };

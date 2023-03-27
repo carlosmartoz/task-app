@@ -1,15 +1,14 @@
 import { useStorageListener } from "./useStorageListener";
 
-// Component UI
-function TaskAlert({ synchronize, storageChange, setStorageChange }) {
-	// Call to Custom Hook useStorageListener
-	const { show, toggleShow } = useStorageListener(synchronize, storageChange, setStorageChange);
+function TaskAlert({ storageChange, setStorageChange, synchronize }) {
+	const { show, toggleShow } = useStorageListener(storageChange, setStorageChange, synchronize);
 
 	if (show) {
 		return (
 			<div className="task--alert">
 				<p>There have been new changes press the button to update.</p>
-				<button className="task--button" onClick={() => toggleShow(false)}>
+
+				<button className="task--button-refresh" onClick={() => toggleShow(false)}>
 					<div>
 						<span></span>
 						<p>Refresh</p>
