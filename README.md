@@ -8,10 +8,10 @@
 
 ## 💼 Skills
 
-![](https://img.shields.io/badge/Markup-HTML-informational?style=for-the-badge&logo=html5&logoColor=edf2f4&color=2b2d42&labelColor=2892d7)
-![](https://img.shields.io/badge/Style-CSS-informational?style=for-the-badge&logo=css3&logoColor=edf2f4&color=2b2d42&labelColor=2892d7)
-![](https://img.shields.io/badge/Code-JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=edf2f4&color=2b2d42&labelColor=2892d7)
-![](https://img.shields.io/badge/Code-React.js-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=2b2d42&labelColor=2892d7)
+![](https://img.shields.io/badge/Markup-HTML-informational?style=for-the-badge&logo=html5&logoColor=edf2f4&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Style-CSS-informational?style=for-the-badge&logo=css3&logoColor=edf2f4&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Code-JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=edf2f4&color=2b2d42&labelColor=ef233c)
+![](https://img.shields.io/badge/Code-React.js-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=2b2d42&labelColor=ef233c)
 
 ## 🚨 Fork
 
