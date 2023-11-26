@@ -1,7 +1,7 @@
 # 📄 Introduction
 
 <div align="center">
-   <h3 align="center">Pokédex</h3>
+   <h3 align="center">Task App</h3>
 
    <p align="center">Efficient task management application built in React, using cookies for smooth performance.</p>
 </div>
