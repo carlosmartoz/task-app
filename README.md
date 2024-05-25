@@ -13,10 +13,6 @@
 ![](https://img.shields.io/badge/Code-JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=edf2f4&color=2b2d42&labelColor=ef233c)
 ![](https://img.shields.io/badge/Code-React.js-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=2b2d42&labelColor=ef233c)
 
-## 🚨 Fork
-
-You are free to fork this repository, either to see the code or use the portfolio, always giving the respective credits. 💪🏻
-
 ## 🛠 Installation
 
 1. Install dependencies
