@@ -3,7 +3,7 @@
 <div align="center">
    <h3 align="center">Task App</h3>
 
-   <p align="center">Efficient task management application built in React, using cookies for smooth performance.</p>
+   <p align="center">Web application for a technical test where a task manager is created, allowing you to create, edit, and delete your tasks.</p>
 </div>
 
 ## 💼 Skills
