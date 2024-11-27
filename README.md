@@ -14,7 +14,7 @@
    npm install
    ```
 
-## 🛠 Development
+## Development
 
 2. Start the development server
 
@@ -22,7 +22,7 @@
    npm run dev
    ```
 
-## 🚀 Production
+## Production
 
 3. Generate a production build
 
